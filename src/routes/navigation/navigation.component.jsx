@@ -1,16 +1,16 @@
-import { Fragment, useContext } from 'react'
-import {Link, Outlet} from "react-router-dom"
-import { ReactComponent as Crwnlogo } from '../../assest/crown.svg'
-import './navigation.styles.scss'
-import {UserContext} from "../../contexts/user.context"
-import {signOutUser} from "../../utils/firebase/firebase.utils"
+import { Fragment, useContext } from 'react';
+import {Link, Outlet} from "react-router-dom";
+import { ReactComponent as Crwnlogo } from '../../assest/crown.svg';
+import './navigation.styles.scss';
+import {UserContext} from "../../contexts/user.context";
+import {signOutUser} from "../../utils/firebase/firebase.utils";
 
 const Navigation = () => {
-    const { currentUser, setCurrentUser } = useContext(UserContext)
+    const { currentUser, setCurrentUser } = useContext(UserContext);
 
     const signOutHandler = async () => {
-        await signOutUser()
-        setCurrentUser(null)
+        await signOutUser();
+        setCurrentUser(null);
     }
 
     return (
@@ -36,7 +36,7 @@ const Navigation = () => {
             </div>
             <Outlet />
         </Fragment>
-    )
-}
+    );
+};
 
-export default Navigation
+export default Navigation;
